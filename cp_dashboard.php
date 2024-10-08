@@ -123,7 +123,12 @@ if($stmt = $conn->prepare($query)){
 </head>
 <body>
     <div class="form-container">
+        <div>
+
         <h1>Feedback Form</h1>
+        <a href="./logout.php">Logout</a>
+
+        </div>
         <form method="POST" action="">
             <label for="module_name">Module Name</label>
             <input type="text" id="module_name" name="module_name" required>

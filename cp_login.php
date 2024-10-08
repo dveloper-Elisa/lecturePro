@@ -20,6 +20,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if($result->num_rows == 1){
         $user = $result->fetch_assoc();
 
+        if($user['status'] == 0){
+            echo "<span style='color:red'>Class is Innactive, Contact AccademicQA to activate </span> <br><br>";
+
+            echo "<a href='./cp_login.php'>Back to login</a>";
+            exit;
+        }
+
         if(password_verify($password, $user['password'])){
             $_SESSION['class_id'] = $user['class_id'];
 
