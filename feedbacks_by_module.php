@@ -11,7 +11,7 @@ $result = $conn->query($sql);
 
 // Display feedbacks one after another with "Generate PDF" button
 if ($result->num_rows > 0) {
-    echo "<h1>Feedbacks for Module: $module_name</h1>";
+    echo "<div><h1>Feedbacks for Module: $module_name</h1> <a href='./dashboard.php'>Back home</a> </div>";
     while ($row = $result->fetch_assoc()) {
         echo "<div style='border: 1px solid #ccc; padding: 10px; margin-bottom: 20px;'>";
         echo "<p><strong>Lecturer:</strong> " . $row['lecturer'] . "</p>";

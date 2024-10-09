@@ -14,7 +14,7 @@ $result = $conn->query($sql);
 
 // Display feedbacks arranged by module name
 if ($result->num_rows > 0) {
-    echo "<h1>Feedbacks for Class</h1>";
+    echo "<div><h1>Feedbacks for Class</h1> <a href='./dashboard.php'>Back home</a></div>";
     echo "<ul>";
     while ($row = $result->fetch_assoc()) {
         echo "<li><a href='feedbacks_by_module.php?module_name=" . urlencode($row['module_name']) . "'>" . $row['module_name'] . "</a> - Lecturer: " . $row['lecturer'] . "</li>";
