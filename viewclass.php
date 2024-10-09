@@ -160,6 +160,8 @@ if ($stmt->execute()) {
 </head>
 <body>
 
+<?php include "./QAheader.php"?>
+
 <div class="container">
     <div id="headerr">
     <h1>Class Management</h1> <a href="./dashboard.php">Back dashboard</a> </div>

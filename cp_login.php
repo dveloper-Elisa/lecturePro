@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 
@@ -21,22 +20,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $user = $result->fetch_assoc();
 
         if($user['status'] == 0){
-            echo "<span style='color:red'>Class is Innactive, Contact AccademicQA to activate </span> <br><br>";
-
+            echo "<span style='color:red'>Class is Inactive, Contact AcademicQA to activate </span> <br><br>";
             echo "<a href='./cp_login.php'>Back to login</a>";
             exit;
         }
 
         if(password_verify($password, $user['password'])){
             $_SESSION['class_id'] = $user['class_id'];
-
             header("location:cp_dashboard.php");
+        } else {
+            echo "<span style='color:red'>Invalid password</span>";
         }
+    } else {
+        echo "<span style='color:red'>Class not found</span>";
     }
 }
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +49,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            padding-top: 80px; /* Padding to avoid overlap with the fixed header */
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -106,9 +107,45 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             font-size: 12px;
             margin-bottom: 10px;
         }
+
+        /* Styles for the fixed header */
+        .header {
+            position: fixed;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px 10px 20px;
+            text-align: center;
+        }
+
+        .header nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .header nav a:hover {
+            background-color: #575757;
+        }
     </style>
 </head>
 <body>
+    <!-- Include the header -->
+    <div class="header">
+        <div><h2>Lecturer pro</h2></div>
+        <nav>
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./cp_login.php">Login</a>
+        </nav>
+    </div>
+
     <div class="form-container">
         <h1>Login</h1>
         <form method="POST" action="">

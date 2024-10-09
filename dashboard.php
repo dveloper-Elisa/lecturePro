@@ -1,5 +1,10 @@
 <?php
 
+session_start();
+
+$user_id = $_SESSION['user_id'];
+$email = $_SESSION['email'];
+
 if(!isset($_SESSION['user_id']) || !isset($_SESSION['email'])){
     header("location:cp_login.php");
 }
@@ -84,13 +89,9 @@ if(!isset($_SESSION['user_id']) || !isset($_SESSION['email'])){
     </style>
 </head>
 <body>
+    <?php include "./QAheader.php"?>
     <div class="form-container">
-
-    <div>
-    <a href="./report.php">View Report</a> <a href="./logout.php">Logout</a>
-    </div>
-
-        
+       
         <h1>Register Class</h1>
         <form method="POST" action="register_class.php">
             <label for="department">Department</label>

@@ -33,9 +33,19 @@ if($stmt = $conn->prepare($query)){
 
     $data = $stmt -> execute();
     if($data){
-        echo "Report submited successfully";
+        ?>
+        <script>
+            alert(" Report submited successfully")
+        </script>
+        
+         <?php
     }else{
-        echo "Report not submitted".$stmt->error;
+        ?>
+        <script>
+            alert(" Report not submitted")
+        </script>
+        
+         <?php
     }
 }
 
@@ -122,6 +132,7 @@ if($stmt = $conn->prepare($query)){
     
 </head>
 <body>
+    <?php include "./header.php"?>
     <div class="form-container">
         <div>
 

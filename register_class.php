@@ -3,6 +3,14 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 
+// $user_id = $_SESSION['user_id'];
+// $email = $_SESSION['email'];
+
+// if(!isset($_SESSION['user_id']) || !isset($_SESSION['email'])){
+//     header("location:cp_login.php");
+// }
+
+
 include "./db_connection.php";
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){

@@ -85,6 +85,7 @@ if ($stmt->execute()) {
     </style>
 </head>
 <body>
+    <?php include "./QAheader.php"?>
     <div class="report-container">
         <h1>Class and Feedback Report</h1>
         <?php foreach ($data as $row): ?>
