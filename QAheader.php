@@ -66,8 +66,8 @@
 
         <!-- Navigation links -->
         <div class="nav-links">
-            <a href="./report.php">View Report</a>
-            <a href="./viewclass.php">View Class</a>
+            <a href="./classes.php">Reports</a>
+            <a href="./viewclass.php">Manage Class</a>
             <a href="./dashboard.php">Add Class</a>
             <a href="./logout.php">Logout</a>
         </div>
